@@ -19,11 +19,11 @@ class _MyAppState extends State<MyApp> {
     super.initState();
   }
 
-  startBarcodeScanStream() async {
-    FlutterBarcodeScanner.getBarcodeStreamReceiver(
-        "#ff6666", "Cancel", true, ScanMode.BARCODE)
-        .listen((barcode) => print(barcode));
-  }
+  // startBarcodeScanStream() async {
+  //   FlutterBarcodeScanner.getBarcodeStreamReceiver(
+  //       "#ff6666", "Cancel", true, ScanMode.BARCODE)
+  //       .listen((barcode) => print(barcode));
+  // }
 
   Future<void> scanQR() async {
     String barcodeScanRes;
@@ -86,9 +86,9 @@ class _MyAppState extends State<MyApp> {
                         RaisedButton(
                             onPressed: () => scanQR(),
                             child: Text("Start QR scan")),
-                        RaisedButton(
-                            onPressed: () => startBarcodeScanStream(),
-                            child: Text("Start barcode scan stream")),
+                        // RaisedButton(
+                        //     onPressed: () => startBarcodeScanStream(),
+                        //     child: Text("Start barcode scan stream")),
                         Text('Scan result : $_scanBarcode\n',
                             style: TextStyle(fontSize: 20))
                       ]));
